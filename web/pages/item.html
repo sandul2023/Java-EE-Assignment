@@ -1,6 +1,3 @@
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="dto.ItemDTO" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +21,7 @@
     <ul class="list-group list-group-horizontal text-danger justify-content-end font-weight-bold">
         <li class="list-group-item bg-white" id="lnkHome"><a href="../index.html">Home</a></li>
         <li class="list-group-item bg-white" id="lnkCustomer"><a href="customer.html">Customer</a></li>
-        <li class="list-group-item bg-danger text-white" id="lnkItem"><a class="text-white" href="item.jsp">Item</a>
+        <li class="list-group-item bg-danger text-white" id="lnkItem"><a class="text-white" href="item.html">Item</a>
         </li>
         <li class="list-group-item bg-white" id="lnkOrders"><a href="purchase-order.jsp">Orders</a></li>
     </ul>
@@ -77,21 +74,7 @@
                 </tr>
                 </thead>
                 <tbody id="tblItem">
-                <%
-                    ArrayList<ItemDTO> allItems = (ArrayList<ItemDTO>) request.getAttribute("keyTwo");
-                    if (allItems != null) {
-                %>
-                <%for (ItemDTO itemDTO : allItems) { %>
-                <tr>
-                    <td><%=itemDTO.getCode()%></td>
-                    <td><%=itemDTO.getDescription()%></td>
-                    <td><%=itemDTO.getQtyOnHand()%></td>
-                    <td><%=itemDTO.getUnitPrice()%></td>
-                </tr>
-                <%
-                        }
-                    }
-                %>
+
                 </tbody>
             </table>
         </div>
