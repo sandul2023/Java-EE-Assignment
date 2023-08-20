@@ -93,7 +93,7 @@
 <script src="../assets/js/bootstrap.min.js"></script>
 
 
-<!--bind a event on btn GetAll btn-->
+    <!--btn GetAll btn-->
 <script>
     getAllCustomers();
     $("#btnGetAll").click(function () {
@@ -121,6 +121,8 @@
             }
         });
     }
+
+    <!--btn Add btn-->
     $("#btnCustomer").click(function (){
         let formData=$("#customerForm").serialize();
         $.ajax({
@@ -138,6 +140,8 @@
             }
         });
     });
+
+    <!--btn Delete btn-->
     $("#btnCusDelete").click(function(){
         let  id=$("#txtCustomerID").val();
         $.ajax({
@@ -155,6 +159,8 @@
             }
         });
     });
+
+    <!--btn Update btn-->
     $("#btnUpdate").click(function (){
         let formData=$("#customerForm").serialize();
         $.ajax({

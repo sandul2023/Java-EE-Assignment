@@ -75,30 +75,6 @@ public class CustomerServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ajaxjson", "root", "1234");
-//            String cusID = req.getParameter("cusID");
-//            PreparedStatement pstm2 = connection.prepareStatement("delete from Customer where cusID=?");
-//            pstm2.setObject(1, cusID);
-//            if (pstm2.executeUpdate() > 0) {
-//                JsonObjectBuilder response = Json.createObjectBuilder();
-//                response.add("state", "Ok");
-//                response.add("message", "Successfully Added.!");
-//                response.add("data", "");
-//                resp.getWriter().print(response.build());
-//            }
-//        } catch (ClassNotFoundException e) {
-//            throw new RuntimeException(e);
-//        } catch (SQLException e) {
-//            JsonObjectBuilder response = Json.createObjectBuilder();
-//            response.add("state", "Error");
-//            response.add("message", e.getMessage());
-//            response.add("data", "");
-//            resp.setStatus(400);
-//            resp.getWriter().print(response.build());
-//        }
-//    }
         String id = req.getParameter("id");
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -124,31 +100,6 @@ public class CustomerServlet extends HttpServlet {
             resp.getWriter().print(response.build());
         }
     }
-//    @Override
-//    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String cusID = req.getParameter("cusID");
-//        String cusName = req.getParameter("cusName");
-//        String cusAddress = req.getParameter("cusAddress");
-//        String cusSalary = req.getParameter("cusSalary");
-//        JsonObjectBuilder response = Json.createObjectBuilder();
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ajaxjson", "root", "1234");
-//            PreparedStatement pstm3 = connection.prepareStatement("update Customer set cusName=?, cusAddress=?, cusSalary=? where cusID=?");
-//            pstm3.setObject(4, cusID);
-//            pstm3.setObject(1, cusName);
-//            pstm3.setObject(2, cusAddress);
-//            pstm3.setObject(3, cusSalary);
-//            // Your database connection code        // Your update code
-//            response.add("message", "Customer Updated!");
-//            resp.setStatus(HttpServletResponse.SC_OK);
-//        } catch (Exception e) {
-//            response.add("message", e.getMessage());
-//            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-//        }
-//        resp.setHeader("Content-Type", "application/json");
-//        resp.getWriter().print(response.build());
-//    }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
